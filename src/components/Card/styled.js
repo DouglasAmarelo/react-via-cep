@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 // Card
 export const Card = styled.section`
 	background-color: #fff;
