@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import getDataFromApi from '../../services/api';
 import * as S from './styled';
 
-const Form = () => {
+const Form = ({ formError, setformError, setAddressInfo }) => {
 	const [formInput, setFormInput] = useState('');
+
 	// Handle input data
 	const handleInputValue = (event) => {
 		let inputValue = '';
@@ -11,11 +13,28 @@ const Form = () => {
 		inputValue = inputValue.replace(/(\d{5})(\d{1,3})/gmi, '$1-$2');
 
 		setFormInput(inputValue);
+		setformError('');
+	};
+
+	// Get information from ViaCEP
+	const getAddress = cep => getDataFromApi(`https://viacep.com.br/ws/${cep}/json/`);
+
+
+	const handleFormSubmit = async event => {
+		event.preventDefault();
+		const cep = formInput;
+
+		if (!cep) {
+			setformError(`Por favor, informe um CEP`);
+			return;
+		}
+
+		await setAddressInfo(await getAddress(cep));
 	};
 
 	return(
 		<>
-			<S.formCep>
+			<S.formCep onSubmit={handleFormSubmit}>
 				<S.formCepInput
 					placeholder="Digite seu CEP:"
 					maxLength="9"
@@ -23,13 +42,10 @@ const Form = () => {
 					onChange={e => handleInputValue(e)}
 				/>
 
-				<S.formCepButton>
-					Consultar
-				</S.formCepButton>
-
+				<S.formCepButton children="Consultar"/>
 			</S.formCep>
 
-			<S.formCepError />
+			<S.formCepError children={formError} />
 		</>
 	);
 };
