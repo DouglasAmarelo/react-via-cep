@@ -1,22 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import * as S from './styled';
 
-const Map = () => {
-	const [closeMap, setCloseMap] = useState(false);
+const Map = ({ setCloseMap }) => {
 
 	return(
-		<>
-			{!closeMap && (
-				<S.Map>
-					<S.MapClose
-						title="Fechar mapa"
-						onClick={() => setCloseMap(true)}
-					>
-						Fechar Mapa
-					</S.MapClose>
-				</S.Map>
-			)}
-		</>
+		<S.Map>
+			<S.MapClose
+				title="Fechar mapa"
+				onClick={() => setCloseMap(true)}
+			>
+				Fechar Mapa
+			</S.MapClose>
+		</S.Map>
 	);
 };
 
