@@ -32,6 +32,10 @@ const GlobalStyles = createGlobalStyle`
 		display: none;
 		visibility: hidden;
 	}
+
+	/* Sizes */
+	.w100 { width: 100%;}
+	.h100 { height: 100%;}
 `;
 
 export default GlobalStyles;
