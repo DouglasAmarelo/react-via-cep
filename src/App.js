@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Card from './components/Card';
 import GlobalStyles from './components/styles/global';
@@ -9,8 +9,11 @@ import Address from './components/Address';
 function App() {
 	const [closeMap, setCloseMap] = useState(true);
 	const [addressInfo, setAddressInfo] = useState(null);
-
 	const [formError, setformError] = useState(null);
+
+	useEffect(() => {
+		setCloseMap(false);
+	}, [addressInfo]);
 
 	return (
 		<div className="App">
@@ -26,7 +29,12 @@ function App() {
 
 				<Card>
 					{addressInfo && (<Address {...addressInfo} />)}
-					{!closeMap && (<Map setCloseMap={setCloseMap} />)}
+					{!closeMap && addressInfo && (
+						<Map
+							setCloseMap={setCloseMap}
+							addressInfo={addressInfo}
+						/>
+					)}
 				</Card>
 		</div>
 	);
