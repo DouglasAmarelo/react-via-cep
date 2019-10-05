@@ -19,7 +19,6 @@ const Form = ({ formError, setformError, setAddressInfo }) => {
 	// Get information from ViaCEP
 	const getAddress = cep => getDataFromApi(`https://viacep.com.br/ws/${cep}/json/`);
 
-
 	const handleFormSubmit = async event => {
 		event.preventDefault();
 		const cep = formInput;
@@ -40,6 +39,7 @@ const Form = ({ formError, setformError, setAddressInfo }) => {
 					maxLength="9"
 					value={formInput}
 					onChange={e => handleInputValue(e)}
+					autoComplete="true"
 				/>
 
 				<S.formCepButton children="Consultar"/>
