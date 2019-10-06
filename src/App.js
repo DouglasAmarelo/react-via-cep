@@ -7,12 +7,12 @@ import Map from './components/Map';
 import Address from './components/Address';
 
 function App() {
-	const [closeMap, setCloseMap] = useState(true);
+	const [closeCard, setCloseCard] = useState(true);
 	const [addressInfo, setAddressInfo] = useState(null);
 	const [formError, setformError] = useState(null);
 
 	useEffect(() => {
-		setCloseMap(false);
+		setCloseCard(false);
 	}, [addressInfo]);
 
 	return (
@@ -21,19 +21,23 @@ function App() {
 
 			<Card title="Consultar seu CEP">
 				<Form
+					addressInfo={addressInfo}
 					formError={formError}
-					setformError={setformError}
 					setAddressInfo={setAddressInfo}
+					setformError={setformError}
+					setCloseCard={setCloseCard}
 				/>
 			</Card>
 
-				<Card>
-					{addressInfo && (<Address {...addressInfo} />)}
-					{!closeMap && addressInfo && (
-						<Map
-							setCloseMap={setCloseMap}
-							addressInfo={addressInfo}
-						/>
+				<Card closeCard={closeCard}>
+					{addressInfo && (
+						<>
+							<Address {...addressInfo} />
+							<Map
+								setCloseCard={setCloseCard}
+								addressInfo={addressInfo}
+							/>
+						</>
 					)}
 				</Card>
 		</div>
