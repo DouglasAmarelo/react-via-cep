@@ -5,8 +5,9 @@ import MapMarker from '../MapMarker';
 
 import * as S from './styled';
 
-const Map = ({ setCloseMap, addressInfo: { logradouro } }) => {
-	const GM_API_K      = `AIzaSyD-8H_N7vrRpRt54CzyAHaNPY_t-JD1Nv4`;
+const GM_API_K = `AIzaSyD-8H_N7vrRpRt54CzyAHaNPY_t-JD1Nv4`;
+
+const Map = ({ setCloseCard, addressInfo: { logradouro } }) => {
 	const [mapLocation, setMapLocation] = useState(null);
 
 	useEffect(() => {
@@ -27,7 +28,7 @@ const Map = ({ setCloseMap, addressInfo: { logradouro } }) => {
 				<S.Map>
 					<S.MapClose
 						title="Fechar mapa"
-						onClick={() => setCloseMap(true)}
+						onClick={() => setCloseCard(true)}
 					>
 						Fechar Mapa
 					</S.MapClose>
@@ -41,12 +42,9 @@ const Map = ({ setCloseMap, addressInfo: { logradouro } }) => {
 							<MapMarker
 								lat={mapLocation.lat}
 								lng={mapLocation.lng}
-								text="Opa!"
 							/>
 						</GoogleMapReact>
 					</div>
-
-					<p>{ console.log(logradouro, mapLocation, mapLocation.lat, mapLocation.lng) }</p>
 				</S.Map>
 			)}
 		</>
