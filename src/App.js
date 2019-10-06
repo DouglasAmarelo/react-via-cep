@@ -36,6 +36,7 @@ function App() {
 							<Map
 								setCloseCard={setCloseCard}
 								addressInfo={addressInfo}
+								setformError={setformError}
 							/>
 						</>
 					)}

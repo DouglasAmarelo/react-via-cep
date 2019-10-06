@@ -15,9 +15,13 @@ const Map = ({ setCloseCard, addressInfo: { logradouro } }) => {
 		const getGeoLocation = address => getDataFromApi(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${GM_API_K}`);
 
 		getGeoLocation(logradouro).then(mapLocationData => {
-			const geoLocation = mapLocationData.results[0].geometry.location;
+			if (mapLocationData && mapLocationData.results[0]) {
+				const geoLocation = mapLocationData.results[0].geometry.location;
 
-			setMapLocation(geoLocation);
+				setMapLocation(geoLocation);
+				return;
+			}
+
 		});
 	}, [logradouro]);
 

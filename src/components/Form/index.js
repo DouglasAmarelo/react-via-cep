@@ -19,12 +19,19 @@ const Form = ({ addressInfo, formError, setAddressInfo, setformError, setCloseCa
 	// Get information from ViaCEP
 	const getAddress = cep => getDataFromApi(`https://viacep.com.br/ws/${cep}/json/`);
 
-	const handleFormSubmit = async event => {
+	const handleFormSubmit = event => {
 		event.preventDefault();
 		const cep = formInput;
 
+		// If it has no zip code, renders an error and stops code execution
 		if (!cep) {
 			setformError(`Por favor, informe um CEP`);
+			return;
+		}
+
+		// If the data has no 9 characters, renders an error and stops code execution
+		if (cep.length > 0 && cep.length < 9) {
+			setformError('Por favor, informe um CEP válido');
 			return;
 		}
 
@@ -35,7 +42,17 @@ const Form = ({ addressInfo, formError, setAddressInfo, setformError, setCloseCa
 			return;
 		}
 
-		await setAddressInfo(await getAddress(cep));
+		// Get the address informarion from the ViaCEP Api
+		getAddress(cep).then(viaCEPData => {
+			if (viaCEPData.erro) {
+				setformError(`Nenhuma informação encontrada.`);
+				setCloseCard(true);
+
+				return;
+			}
+
+			setAddressInfo(viaCEPData);
+		});
 	};
 
 	return(
