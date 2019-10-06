@@ -1,9 +1,9 @@
 import React from 'react';
 import * as S from './styled';
 
-const Card = ({ title, children }) => {
+const Card = ({ title, children, closeCard }) => {
 	return(
-		<S.Card>
+		<S.Card closeCard={closeCard}>
 			{title && (
 				<S.CardTitle>{ title }</S.CardTitle>
 			)}
