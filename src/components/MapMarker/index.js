@@ -1,9 +1,9 @@
 import React from 'react';
 import * as S from './styled';
 
-const MapMarker = ({ text }) => (
+const MapMarker = () => (
 	<S.mapMarker>
-		{text}
+		<span role="img" aria-label="Localização exata no mapa">👇</span>
 	</S.mapMarker>
 );
 
