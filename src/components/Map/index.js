@@ -37,7 +37,7 @@ const Map = ({ setCloseCard, addressInfo: { logradouro } }) => {
 						<GoogleMapReact
 							bootstrapURLKeys={{ key: GM_API_K }}
 							center={mapLocation}
-							defaultZoom={16}
+							defaultZoom={15}
 						>
 							<MapMarker
 								lat={mapLocation.lat}
