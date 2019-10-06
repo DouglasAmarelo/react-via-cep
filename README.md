@@ -1,68 +1,58 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">Welcome to react-via-cep 👋</h1>
+<p>
+  <a href="https://www.npmjs.com/package/react-via-cep" target="_blank">
+    <img alt="Version" src="https://img.shields.io/npm/v/react-via-cep.svg">
+  </a>
+  <a href="https://twitter.com/DouglasAmarelo" target="_blank">
+    <img alt="Twitter: DouglasAmarelo" src="https://img.shields.io/twitter/follow/DouglasAmarelo.svg?style=social" />
+  </a>
+</p>
 
-## Available Scripts
+> Usando as API's do [Via CEP](https://viacep.com.br) e do [Google Maps](https://developers.google.com/maps/documentation/?hl=pt-br), é possível pesquisar o CEP digitado e encontrar o endereço na visualização do Google Maps.
 
-In the project directory, you can run:
+### 🏠 [Homepage](https://douglas-lopes-react-via-cep.netlify.com/)
+Você pode acessar o [projeto funcioando aqui](https://douglas-lopes-react-via-cep.netlify.com/).
 
-### `npm start`
+## Install
+Para instalar o projeto, você vai precisar:
+- [Node.js](https://nodejs.org/en/)
+- [Yarn](https://yarnpkg.com/en/)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Depois de instalar o Node.js e o Yarn, você vai precisar instalar os pacotes e dependências desse projeto.
+Para instalar, basta rodar o comando:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+```sh
+yarn
+```
 
-### `npm test`
+## Usage
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Depois que tudo foi instalado, você pode rodar o projeto em modo de desenvolvimento com o comando:
 
-### `npm run build`
+```sh
+yarn start
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Após ter rodado o comando, o projeto ficará disponível em [http://localhost:3000](http://localhost:3000) e você pode abrir no navegador que preferir.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Author
 
-### `npm run eject`
+👤 **DouglasAmarelo**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* Twitter: [@DouglasAmarelo](https://twitter.com/DouglasAmarelo)
+* Github: [@DouglasAmarelo](https://github.com/DouglasAmarelo)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🤝 Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Contribuições, reports de erros e novas ideias, são sempre bem-vindas!<br />
+Sinta-se a vontade para visitar a [página de issues](https://github.com/DouglasAmarelo/react-via-cep/issues).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Show your support
 
-## Learn More
+Give a ⭐️ if this project helped you!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+***
+- _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+- _This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)_
+- _This project is hosted by [netlify](https://www.netlify.com)_
