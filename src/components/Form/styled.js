@@ -6,7 +6,7 @@ export const formCep = styled.form`
 	justify-content: space-between;
 `;
 
-export const formCepInput = styled.input.attrs({ type: 'text' })`
+export const formCepInput = styled.input.attrs({ type: 'tel' })`
 		border: 1px solid #ccc;
 		padding: .7em 1em;
 		width: 100%;
