@@ -12,7 +12,7 @@ const GlobalStyles = createGlobalStyle`
 		overflow: auto;
 		padding: 0;
 
-		// Remove some map items
+		/* Remove some map items */
 		.gm-style-mtc {
 			display: none;
 			visibility: hidden;
@@ -22,6 +22,7 @@ const GlobalStyles = createGlobalStyle`
 	body {
 		background-color: #f1f1f1;
 		overflow-y: scroll;
+		padding-bottom: 60px;
 	}
 
 	/* Fonts */
