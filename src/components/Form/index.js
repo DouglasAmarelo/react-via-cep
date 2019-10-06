@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import getDataFromApi from '../../services/api';
 import * as S from './styled';
 
-const Form = ({ formError, setformError, setAddressInfo }) => {
+const Form = ({ addressInfo, formError, setAddressInfo, setformError, setCloseCard }) => {
 	const [formInput, setFormInput] = useState('');
 
 	// Handle input data
@@ -25,6 +25,13 @@ const Form = ({ formError, setformError, setAddressInfo }) => {
 
 		if (!cep) {
 			setformError(`Por favor, informe um CEP`);
+			return;
+		}
+
+		// If the current zip code is the same as the previously searched zip code,
+		// it does not call the API, it just displays the map with the previous data
+		if (cep && addressInfo && cep === addressInfo.cep) {
+			setCloseCard(false);
 			return;
 		}
 
